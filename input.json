@@ -1,0 +1,36 @@
+{
+  "includeWebResults": false,
+  "language": "en",
+  "locationQuery": "Konstanz",
+  "maxCrawledPlacesPerSearch": 500,
+  "maxImages": 0,
+  "maximumLeadsEnrichmentRecords": 0,
+  "scrapeContacts": false,
+  "scrapeDirectories": false,
+  "scrapeImageAuthors": false,
+  "scrapeOrderOnline": false,
+  "scrapePlaceDetailPage": false,
+  "scrapeReviewsPersonalData": true,
+  "scrapeSocialMediaProfiles": {
+    "facebooks": false,
+    "instagrams": false,
+    "tiktoks": false,
+    "twitters": false,
+    "youtubes": false
+  },
+  "scrapeTableReservationProvider": false,
+  "searchStringsArray": [
+    "restaurant"
+  ],
+  "skipClosedPlaces": false,
+  "verifyLeadsEnrichmentEmails": false,
+  "searchMatching": "all",
+  "placeMinimumStars": "",
+  "website": "allPlaces",
+  "maxQuestions": 0,
+  "maxReviews": 0,
+  "reviewsSort": "newest",
+  "reviewsFilterString": "",
+  "reviewsOrigin": "all",
+  "allPlacesNoSearchAction": ""
+}

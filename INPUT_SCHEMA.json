@@ -1,0 +1,156 @@
+{
+  "title": "Google Maps Crawler Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "searchStringsArray": {
+      "title": "Search terms",
+      "type": "array",
+      "description": "Search terms to query on Google Maps.",
+      "editor": "stringList",
+      "default": ["restaurant"],
+      "items": {
+        "type": "string"
+      }
+    },
+    "locationQuery": {
+      "title": "Location",
+      "type": "string",
+      "description": "Location appended to each search term.",
+      "editor": "textfield",
+      "default": "New York"
+    },
+    "language": {
+      "title": "Language",
+      "type": "string",
+      "description": "Google Maps interface language, for example en or de.",
+      "editor": "textfield",
+      "default": "en"
+    },
+    "maxCrawledPlacesPerSearch": {
+      "title": "Max places per search",
+      "type": "integer",
+      "description": "Maximum number of Google Maps place URLs to collect per search.",
+      "editor": "number",
+      "default": 50,
+      "minimum": 1
+    },
+    "headless": {
+      "title": "Run browser headless",
+      "type": "boolean",
+      "description": "Run Chromium without a visible browser window.",
+      "editor": "checkbox",
+      "default": true
+    },
+    "waitAfterSearch": {
+      "title": "Wait after search",
+      "type": "integer",
+      "description": "Milliseconds to wait after submitting a search.",
+      "editor": "number",
+      "default": 3500,
+      "minimum": 0
+    },
+    "waitAfterOpen": {
+      "title": "Wait after opening place",
+      "type": "integer",
+      "description": "Milliseconds to wait after opening a place detail page.",
+      "editor": "number",
+      "default": 1800,
+      "minimum": 0
+    },
+    "categoryFilterWords": {
+      "title": "Category filter words",
+      "type": "array",
+      "description": "Keep only places whose category matches these words. Leave empty to keep all categories.",
+      "editor": "stringList",
+      "default": [],
+      "items": {
+        "type": "string"
+      }
+    },
+    "searchMatching": {
+      "title": "Search matching",
+      "type": "string",
+      "description": "Whether all or any category filter words must match.",
+      "editor": "select",
+      "default": "all",
+      "enum": ["all", "any"],
+      "enumTitles": ["All", "Any"]
+    },
+    "placeMinimumStars": {
+      "title": "Minimum rating",
+      "type": "string",
+      "description": "Minimum place rating, for example 4.5. Leave empty to disable.",
+      "editor": "textfield",
+      "default": ""
+    },
+    "website": {
+      "title": "Website filter",
+      "type": "string",
+      "description": "Filter places by website availability.",
+      "editor": "select",
+      "default": "allPlaces",
+      "enum": ["allPlaces", "onlyWithWebsite", "onlyWithoutWebsite"],
+      "enumTitles": ["All places", "Only with website", "Only without website"]
+    },
+    "skipClosedPlaces": {
+      "title": "Skip closed places",
+      "type": "boolean",
+      "description": "Discard places whose scraped open status contains closed.",
+      "editor": "checkbox",
+      "default": false
+    },
+    "scrapePlaceDetailPage": {
+      "title": "Scrape place detail page",
+      "type": "boolean",
+      "description": "Disable to collect only lightweight fields and skip expensive detail extraction.",
+      "editor": "checkbox",
+      "default": true
+    },
+    "scrapeOpeningHours": {
+      "title": "Scrape opening hours",
+      "type": "boolean",
+      "description": "Scrape weekly opening hours when detail scraping is enabled.",
+      "editor": "checkbox",
+      "default": true
+    },
+    "scrapeContacts": {
+      "title": "Scrape contacts",
+      "type": "boolean",
+      "description": "Scrape address, phone, and website when detail scraping is enabled.",
+      "editor": "checkbox",
+      "default": true
+    },
+    "scrapeDirectories": {
+      "title": "Scrape directories",
+      "type": "boolean",
+      "description": "Reserved for compatibility. Current crawler does not export directory fields.",
+      "editor": "checkbox",
+      "default": false
+    },
+    "maxReviews": {
+      "title": "Max reviews",
+      "type": "integer",
+      "description": "Maximum number of top reviews to scrape. Set to 0 to skip reviews.",
+      "editor": "number",
+      "default": 5,
+      "minimum": 0
+    },
+    "maxImages": {
+      "title": "Max images",
+      "type": "integer",
+      "description": "Set to 0 to skip image extraction. Current crawler exports only the main image URL.",
+      "editor": "number",
+      "default": 1,
+      "minimum": 0
+    },
+    "scrapeImageAuthors": {
+      "title": "Scrape image authors",
+      "type": "boolean",
+      "description": "Reserved for compatibility. Current crawler does not export image author fields.",
+      "editor": "checkbox",
+      "default": false
+    }
+  },
+  "required": ["searchStringsArray", "locationQuery"]
+}

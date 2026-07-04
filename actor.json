@@ -1,0 +1,13 @@
+{
+	"actorSpecification": 1,
+	"name": "google-map-crawler",
+	"title": "Google Maps Crawler",
+	"description": "Scrapes Google Maps places and exports results to JSON and CSV.",
+	"version": "0.1",
+	"buildTag": "latest",
+	"dockerfile": "./Dockerfile",
+	"input": "./INPUT_SCHEMA.json",
+	"meta": {
+		"templateId": "python-playwright"
+	}
+}

@@ -1,0 +1,6 @@
+{
+	"name": "google-map-crawler",
+	"version": "0.1",
+	"buildTag": "latest",
+	"template": "python-playwright"
+}
